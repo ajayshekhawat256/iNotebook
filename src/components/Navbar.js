@@ -6,6 +6,7 @@ const Navbar = (props) => {
     let history=useNavigate();
     const handleClick=()=>{
         localStorage.removeItem('token');
+        localStorage.removeItem('name');
         props.showAlert("Logged out successfully","success");
         history('/login');
     }

@@ -2,6 +2,7 @@ import React, { useContext,useState } from 'react'
 import notecontext from '../context/notes/noteContext'
 
 const AddNote = (props) => {
+    const Name=localStorage.getItem('name');
     const [note,setnote]=useState({title:"",description:"",tag:""})
     const handleClick=(e)=>{
         e.preventDefault();
@@ -19,6 +20,7 @@ const AddNote = (props) => {
     const { addnote } = context;
     return (
         <form className="container mt-3">
+            <h3>Hi, {Name}</h3>
             <h1>Add a Note</h1>
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Title</label>

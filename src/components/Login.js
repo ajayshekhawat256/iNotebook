@@ -21,7 +21,9 @@ const Login = (props) => {
         const json=await response.json();
         console.log(json)
         if(json.success){
-            localStorage.setItem('token',json.authtoken)
+            console.log(json);
+            localStorage.setItem('token',json.authtoken);
+            localStorage.setItem('name',json.name);
             history("/");
             showAlert("Logged in successfully","success");
         }
@@ -34,7 +36,7 @@ const Login = (props) => {
     }
     return (
         <div className="mt-5">
-            <h2>Login to continue to iNotebook</h2>
+            <h2>Login to continue to iNotebook </h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
